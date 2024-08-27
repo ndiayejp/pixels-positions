@@ -8,7 +8,7 @@
                     <input type="text" placeholder="Web developer..." class="bg-white/10 border border-white/5 rounded-lg py-4 px-5 w-full max-w-xl">
                 </form> --}}
                 <x-forms.form action="/search" class="mt-6">
-                    <x-forms.input  name="keyword" :label="false" placeholder="Web developer..."/>
+                    <x-forms.input  name="q" :label="false" placeholder="Web developer..."/>
                 </x-forms.form>
             </div>
         </section>
