@@ -24,11 +24,22 @@
                     <li><a href="#" class="hover:text-blue-700">Companies</a></li>
                 </ul>
             </div>
-            <div>
-                <a href="#" class="hover:text-blue-700 font-bold">Post a <span class="text-blue-700">job</span></a>
-            </div>
+            @auth
+            <ul class="flex justify-between space-x-5 items-center font-bold">
+                <li><a href="/jobs/create" class="hover:bg-blue-600 font-bold bg-blue-800 rounded text-white py-1.5 px-2.5">Post a job </a></li>
+                <li>
+                    <a href="#" class="text-white hover:text-blue-500">Déconnexion</a>
+                </li>
+            </ul>
+            @endauth
+            @guest
+                <ul class="flex justify-between space-x-5 items-center font-bold">
+                    <li><a href="/register" class="hover:text-blue-700">Sign up</a></li>
+                    <li><a href="/login" class="hover:text-blue-700">Login</a></li>
+                </ul>
+            @endguest
         </nav>
-        <main class="mt-10 max-w-7xl mx-auto">
+        <main class="mt-10 max-w-7xl mx-auto px-5">
             {{$slot}}
         </main>
     </div>

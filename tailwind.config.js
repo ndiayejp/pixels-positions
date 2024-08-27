@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
         colors:{
-            black:'#060606'
+            black:'#060606',
+            'bubble-gum': '#ff77e9',
+            'bermuda': '#78dcca',
         },
         fontFamily:{
             "hanken-grotest":["Hanken Grotesk", "sans-serif"]
