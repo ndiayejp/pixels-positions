@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
    public function __invoke(){
-        $jobs = Job::where('title','like',"%".request('q')."%")->get();
+        $jobs = Job::query()
+                ->with(['tags','employer'])
+                ->where('title','like',"%".request('q')."%")
+                ->get();
         return view('jobs.results',compact('jobs'));
    }
 }

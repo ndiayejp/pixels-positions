@@ -3,17 +3,14 @@
     <div class="space-y-10 mx-5">
         <section>
             <div class="text-center my-5">
-                <h1 class="font-bold text-4xl my-5">Let's find your next job</h1>
-                {{-- <form action="#">
-                    <input type="text" placeholder="Web developer..." class="bg-white/10 border border-white/5 rounded-lg py-4 px-5 w-full max-w-xl">
-                </form> --}}
+                <h1 class="font-bold text-4xl my-5">Trouvez votre prochain emploi</h1>
                 <x-forms.form action="/search" class="mt-6">
-                    <x-forms.input  name="q" :label="false" placeholder="Web developer..."/>
+                    <x-forms.input  name="q" :label="false" placeholder="Développeur web..."/>
                 </x-forms.form>
             </div>
         </section>
         <section>
-            <x-section-heading>Top Jobs</x-section-heading>
+            <x-section-heading>Emplois mis en avant</x-section-heading>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-between mt-6 gap-2">
                 @foreach ($featuredJobs as $job)
                 <x-job-card :$job />
@@ -29,7 +26,7 @@
             </div>
         </section>
         <section>
-            <x-section-heading>Recents Jobs</x-section-heading>
+            <x-section-heading>Emplois Récents  </x-section-heading>
             <div class="space-y-6 my-6">
                 @foreach ($jobs as $job)
                 <x-job-card-wide :$job />
